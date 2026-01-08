@@ -1,0 +1,19 @@
+[Unit]
+Description=Micra Pro Backend Application
+Requires=dbus.service
+After=network.target remote-asset-server.service
+
+[Service]
+Type=notify
+Restart=always
+User=root
+NotifyAccess=all
+Environment=DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/0/bus"
+Environment=DOTNET_ROOT=/usr/bin/.dotnet
+Environment=PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+Environment=REMOTE_ASSET_SERVER_PRIVATE_KEY="REMOTE_ASSET_SERVER_KEY_DUMMY123"
+WorkingDirectory=/usr/lib/micra-pro/backend
+ExecStart=/usr/lib/micra-pro/backend/MicraPro.Backend
+
+[Install]
+WantedBy=multi-user.target

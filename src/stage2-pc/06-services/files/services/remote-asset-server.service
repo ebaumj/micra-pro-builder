@@ -1,0 +1,13 @@
+[Unit]
+Description=Micra Pro Remote Asset Server
+After=network-online.target
+
+[Service]
+Type=simple
+Environment=REMOTE_ASSET_SERVER_PRIVATE_KEY="REMOTE_ASSET_SERVER_KEY_DUMMY123"
+Environment=NITRO_PORT=80
+ExecStart=authbind --deep /usr/bin/.nodejs/bin/node /usr/lib/micra-pro/asset-server/server/index.mjs
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

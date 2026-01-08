@@ -1,0 +1,13 @@
+[Unit]
+Description=Micra Pro Local Asset Server
+
+[Service]
+Type=simple
+PIDFile=/run/lighttpd.pid
+ExecStartPre=/usr/sbin/lighttpd -tt -f /usr/lib/micra-pro/server-config/local-asset-server.conf
+ExecStart=/usr/sbin/lighttpd -D -f /usr/lib/micra-pro/server-config/local-asset-server.conf
+ExecReload=/bin/kill -USR1 $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

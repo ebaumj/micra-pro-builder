@@ -1,0 +1,9 @@
+[submodule "pi-gen"]
+	path = pi-gen
+	url = https://github.com/RPi-Distro/pi-gen.git
+[submodule "micra-pro"]
+	path = micra-pro
+	url = https://github.com/ebaumj/micra-pro.git
+[submodule "Transparent_Cursor_Theme"]
+	path = Transparent_Cursor_Theme
+	url = https://github.com/johnodon/Transparent_Cursor_Theme.git
