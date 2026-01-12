@@ -48,6 +48,9 @@ mkdir work/stage2-pc/01-copy-applications/files/asset-server
 cp -r micra-pro/apps/backend/bin/Release/net8.0/linux-arm64/publish/* work/stage2-pc/01-copy-applications/files/backend/
 cp -r micra-pro/dist/apps/frontend/* work/stage2-pc/01-copy-applications/files/frontend/
 cp -r micra-pro/apps/asset-server/.output/* work/stage2-pc/01-copy-applications/files/asset-server/
+if [ ! -f work/stage2-pc/01-copy-applications/files/backend/libe_sqlite3.so ]; then
+	cp micra-pro/apps/backend/bin/Release/net8.0/linux-arm64/libe_sqlite3.so work/stage2-pc/01-copy-applications/files/backend/
+fi
 # Copy Cursor Theme
 echo "Copy Cursor Theme"
 mkdir work/stage2-pc/03-hide-cursor/files
