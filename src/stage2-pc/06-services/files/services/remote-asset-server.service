@@ -1,6 +1,6 @@
 [Unit]
 Description=Micra Pro Remote Asset Server
-After=network-online.target
+After=network-online.target updater.service
 
 [Service]
 Type=simple

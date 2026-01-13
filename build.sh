@@ -45,16 +45,18 @@ mkdir work/stage2-pc/01-copy-applications/files
 mkdir work/stage2-pc/01-copy-applications/files/backend
 mkdir work/stage2-pc/01-copy-applications/files/frontend
 mkdir work/stage2-pc/01-copy-applications/files/asset-server
+mkdir work/stage2-pc/01-copy-applications/files/updater
 cp -r micra-pro/apps/backend/bin/Release/net8.0/linux-arm64/publish/* work/stage2-pc/01-copy-applications/files/backend/
-cp -r micra-pro/dist/apps/frontend/* work/stage2-pc/01-copy-applications/files/frontend/
-cp -r micra-pro/apps/asset-server/.output/* work/stage2-pc/01-copy-applications/files/asset-server/
 if [ ! -f work/stage2-pc/01-copy-applications/files/backend/libe_sqlite3.so ]; then
 	cp micra-pro/apps/backend/bin/Release/net8.0/linux-arm64/libe_sqlite3.so work/stage2-pc/01-copy-applications/files/backend/
 fi
+cp -r micra-pro/dist/apps/frontend/* work/stage2-pc/01-copy-applications/files/frontend/
+cp -r micra-pro/apps/asset-server/.output/* work/stage2-pc/01-copy-applications/files/asset-server/
+cp micra-pro/apps/updater/updater.sh work/stage2-pc/01-copy-applications/files/updater
 # Copy Cursor Theme
 echo "Copy Cursor Theme"
 mkdir work/stage2-pc/03-hide-cursor/files
-cp -r Transparent_Cursor_Theme/Transparent/* work//stage2-pc/03-hide-cursor/files
+cp -r Transparent_Cursor_Theme/Transparent/* work/stage2-pc/03-hide-cursor/files
 # Copy Build Instructions to Pi-Gen
 echo "Copy Build Instructions to Pi-Gen"
 if [ -f pi-gen/config ]; then

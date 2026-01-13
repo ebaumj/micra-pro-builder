@@ -1,0 +1,14 @@
+[Unit]
+Description=Micra Pro App Updater
+
+[Service]
+Type=oneshot
+Environment=APPS_TARGET=/usr/lib/micra-pro
+Environment=UPDATE_FILE=/mnt/localdata/micra-pro/backend/mp-apps.zip
+Environment=CACHE_DIR=/home/micra/.cache/chromium/Default
+WorkingDirectory=/mnt/localdata/micra-pro/backend
+ExecStart=/usr/lib/micra-pro/updater/updater.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

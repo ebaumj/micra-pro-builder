@@ -1,7 +1,7 @@
 [Unit]
 Description=Micra Pro Backend Application
 Requires=dbus.service
-After=network.target remote-asset-server.service
+After=network.target remote-asset-server.service updater.service
 
 [Service]
 Type=notify

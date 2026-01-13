@@ -10,4 +10,5 @@ systemctl set-default graphical.target
 systemctl enable local-asset-server.service
 systemctl enable remote-asset-server.service
 systemctl enable backend.service
+systemctl enable updater.service
 EOF

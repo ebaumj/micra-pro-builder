@@ -1,6 +1,6 @@
 [Unit]
 Description=Micra Pro Frontend Client as Caged Chromium Browser Session
-After=frontend-server.service systemd-user-sessions.service
+After=frontend-server.service systemd-user-sessions.service updater.service
 Before=graphical.target
 ConditionPathExists=/dev/tty0
 Wants=dbus.socket systemd-logind.service
